@@ -10,17 +10,23 @@ import UIKit
 import GoogleMaps
 import GooglePlaces
 
-class MainVC: UIViewController, GMSMapViewDelegate {
+class MainVC: UIViewController {
     @IBOutlet weak var menuButton: UIButton!
+    @IBOutlet weak var bookLaterButton: UIButton!
     
+    @IBOutlet weak var bookNowButton: UIButton!
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var footerView: UIView!
+    
+    let marker = GMSMarker()
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        mapView.delegate = self
 
         // Create a GMSCameraPosition that tells the map to display the
         // coordinate -33.86,151.20 at zoom level 6.
@@ -29,27 +35,45 @@ class MainVC: UIViewController, GMSMapViewDelegate {
         mapView.camera = camera
         
         // Creates a marker in the center of the map.
-        let marker = GMSMarker()
+        
         marker.position = CLLocationCoordinate2D(latitude: 19.1196235, longitude: 72.8617509)
         marker.title = "Sydney"
         marker.snippet = "Australia"
         marker.map = mapView
+        marker.isDraggable = true
+        
+        marker.icon = UIImage(named: "location")
+        
+        mapView.isMyLocationEnabled = true
+        mapView.settings.myLocationButton = true
+        
+        mapView.padding = UIEdgeInsets(top: 0, left: 0, bottom: 150, right: 5)
+        
     
         menuButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
         
+        
+        
+        bookLaterButton.backgroundColor = .clear
+        bookLaterButton.layer.cornerRadius = 2
+        bookLaterButton.layer.borderWidth = 1.5
+        bookLaterButton.layer.borderColor = UIColor.init(red: 0, green: 188/255, blue: 212/255, alpha: 1.0).cgColor
+        
+        
+
+        
+        let mapCB = GMSCoordinateBounds()
+        let downwards = GMSCameraUpdate.fit(mapCB)
+        mapView.animate(with: downwards)
+        
+        
     }
 
     
     
-    func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
-        print("Map will move")
-    }
-    
-    func mapView(_ mapView: GMSMapView, didDrag marker: GMSMarker) {
-        print("Diddrag marker")
-    }
+
     
     
     @IBAction func currentLocationAction(_ sender: Any) {
@@ -61,5 +85,41 @@ class MainVC: UIViewController, GMSMapViewDelegate {
         
     }
     
+    func animateHeaderFooter(){
+        
+        UIView.animate(withDuration: 50.0, animations: {
+            self.headerView.frame = CGRect(x: 0, y: -200, width: self.headerView.frame.size.width, height: self.headerView.frame.size.height)
+            self.footerView.frame = CGRect(x: 0, y: 1000, width: self.footerView.frame.size.width, height: self.footerView.frame.size.height)
+        })
+        
+    }
+    
 
+}
+
+extension MainVC: GMSMapViewDelegate{
+    
+    func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
+        print("Map will move")
+        animateHeaderFooter()
+    }
+    
+    //MARK - GMSMarker Dragging
+    func mapView(_ mapView: GMSMapView, didBeginDragging marker: GMSMarker) {
+        print("didBeginDragging")
+    }
+    func mapView(_ mapView: GMSMapView, didDrag marker: GMSMarker) {
+        print("didDrag")
+    }
+    func mapView(_ mapView: GMSMapView, didEndDragging marker: GMSMarker) {
+        print("didEndDragging")
+    }
+    
+  
+    func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D){
+        marker.position = coordinate
+    }
+    
+    
+    
 }

@@ -1,21 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="AvenirNext.ttc">
-            <string>AvenirNext-DemiBold</string>
-            <string>AvenirNext-Medium</string>
-            <string>AvenirNext-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Reveal View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -43,9 +36,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Jl-pF-YFC" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Jl-pF-YFC" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kW2-it-gQs">
@@ -115,7 +107,7 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notification Message Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IiF-8C-aEh">
                                                 <rect key="frame" x="8" y="0.5" width="304" height="19.5"/>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
                                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -163,18 +155,17 @@
                                                     </button>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8oR-0g-hLp">
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8oR-0g-hLp">
                                                 <rect key="frame" x="8" y="56" width="304" height="50"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iGC-Vw-lpX">
-                                                        <rect key="frame" x="0.0" y="0.0" width="152" height="50"/>
-                                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iGC-Vw-lpX">
+                                                        <rect key="frame" x="0.0" y="0.0" width="147" height="50"/>
                                                         <state key="normal" title="BOOK LATER">
                                                             <color key="titleColor" red="0.0" green="0.73725490199999999" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZKY-dr-eQm">
-                                                        <rect key="frame" x="152" y="0.0" width="152" height="50"/>
+                                                        <rect key="frame" x="157" y="0.0" width="147" height="50"/>
                                                         <color key="backgroundColor" red="0.0" green="0.73725490196078436" blue="0.83137254901960778" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
                                                         <state key="normal" title="BOOK NOW">
@@ -229,15 +220,21 @@
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="RXq-NA-0iP" firstAttribute="trailing" secondItem="kW2-it-gQs" secondAttribute="trailing" constant="8" id="1cr-wS-HA3"/>
+                            <constraint firstAttribute="bottom" secondItem="2Jl-pF-YFC" secondAttribute="bottom" id="4qQ-fW-1UO"/>
                             <constraint firstItem="9Ln-7Y-lOT" firstAttribute="trailing" secondItem="RXq-NA-0iP" secondAttribute="trailing" id="FW4-EL-K7w"/>
                             <constraint firstItem="9Ln-7Y-lOT" firstAttribute="bottom" secondItem="RXq-NA-0iP" secondAttribute="bottom" id="O0K-gw-GhU"/>
                             <constraint firstItem="9Ln-7Y-lOT" firstAttribute="leading" secondItem="RXq-NA-0iP" secondAttribute="leading" id="P28-kB-qEo"/>
                             <constraint firstItem="kW2-it-gQs" firstAttribute="top" secondItem="RXq-NA-0iP" secondAttribute="top" id="SYb-2k-Iyg"/>
                             <constraint firstItem="kW2-it-gQs" firstAttribute="leading" secondItem="RXq-NA-0iP" secondAttribute="leading" constant="8" id="Sa4-Mu-kNB"/>
+                            <constraint firstItem="2Jl-pF-YFC" firstAttribute="leading" secondItem="RXq-NA-0iP" secondAttribute="leading" id="XDb-qT-gFk"/>
+                            <constraint firstAttribute="trailing" secondItem="2Jl-pF-YFC" secondAttribute="trailing" id="dxK-Tp-nOg"/>
+                            <constraint firstItem="2Jl-pF-YFC" firstAttribute="top" secondItem="DF7-7N-npN" secondAttribute="top" id="eg5-Bo-BJq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RXq-NA-0iP"/>
                     </view>
                     <connections>
+                        <outlet property="bookLaterButton" destination="iGC-Vw-lpX" id="CdG-0p-BMb"/>
+                        <outlet property="bookNowButton" destination="ZKY-dr-eQm" id="qmQ-wg-pbT"/>
                         <outlet property="footerView" destination="9Ln-7Y-lOT" id="eLB-0e-czU"/>
                         <outlet property="headerView" destination="kW2-it-gQs" id="8rU-cm-yZO"/>
                         <outlet property="mapView" destination="2Jl-pF-YFC" id="ltu-Ym-HyT"/>
@@ -256,7 +253,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nGL-UX-Cye">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nGL-UX-Cye" customClass="GradientView" customModule="Meru_Demo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qYL-eT-zJc">
@@ -280,7 +277,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vijay Pokuri" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fen-1e-gD2">
-                                                <rect key="frame" x="62" y="29" width="110" height="20.5"/>
+                                                <rect key="frame" x="62" y="29" width="110" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="110" id="Z59-2z-nZg"/>
                                                     <constraint firstAttribute="height" constant="20" id="j3m-rG-oUW"/>
@@ -290,7 +287,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNd-pZ-7zq">
-                                                <rect key="frame" x="176" y="44.5" width="20" height="20"/>
+                                                <rect key="frame" x="176" y="44" width="20" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="20" id="bMf-hs-eCR"/>
                                                     <constraint firstAttribute="height" constant="20" id="yYL-xO-De6"/>
@@ -318,19 +315,28 @@
                                     <constraint firstItem="qYL-eT-zJc" firstAttribute="leading" secondItem="nGL-UX-Cye" secondAttribute="leading" constant="8" id="eTj-dY-eCX"/>
                                     <constraint firstAttribute="bottom" secondItem="qYL-eT-zJc" secondAttribute="bottom" constant="16" id="fha-Ma-exc"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="topColor">
+                                        <color key="value" red="0.12156862745098039" green="0.74901960784313726" blue="0.78823529411764703" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
+                                        <color key="value" red="0.14117647058823529" green="0.80000000000000004" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SZE-k0-xan">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SZE-k0-xan">
                                 <rect key="frame" x="0.0" y="140" width="320" height="340"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="SZE-k0-xan" firstAttribute="leading" secondItem="nGL-UX-Cye" secondAttribute="leading" id="29C-Eb-dgQ"/>
                             <constraint firstItem="nGL-UX-Cye" firstAttribute="top" secondItem="RpC-Zb-2cI" secondAttribute="top" id="HdF-8o-x3N"/>
-                            <constraint firstItem="SZE-k0-xan" firstAttribute="leading" secondItem="1id-fc-6Rx" secondAttribute="leading" id="JWD-rH-qwY"/>
                             <constraint firstItem="nGL-UX-Cye" firstAttribute="leading" secondItem="1id-fc-6Rx" secondAttribute="leading" id="WYB-H2-sRn"/>
-                            <constraint firstItem="SZE-k0-xan" firstAttribute="bottom" secondItem="1id-fc-6Rx" secondAttribute="bottom" id="gxt-Ez-PC1"/>
-                            <constraint firstItem="SZE-k0-xan" firstAttribute="trailing" secondItem="1id-fc-6Rx" secondAttribute="trailing" id="mOY-3S-efg"/>
+                            <constraint firstItem="SZE-k0-xan" firstAttribute="bottom" secondItem="1id-fc-6Rx" secondAttribute="bottom" id="oly-lc-Rba"/>
+                            <constraint firstItem="SZE-k0-xan" firstAttribute="trailing" secondItem="nGL-UX-Cye" secondAttribute="trailing" id="pg2-Tj-CrT"/>
+                            <constraint firstItem="SZE-k0-xan" firstAttribute="top" secondItem="nGL-UX-Cye" secondAttribute="bottom" id="x9n-pT-VdT"/>
                             <constraint firstItem="nGL-UX-Cye" firstAttribute="trailing" secondItem="1id-fc-6Rx" secondAttribute="trailing" id="xgK-6z-9DQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1id-fc-6Rx"/>
