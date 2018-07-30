@@ -7,21 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3DC6B59FBDAE6037AE9A3408 /* Pods_Meru_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1643695E2662448C0DC7025D /* Pods_Meru_Demo.framework */; };
+		B11C1B7E210EDEB3000117AA /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11C1B7D210EDEB3000117AA /* MenuVC.swift */; };
+		B129ED06210F146B008EC1B5 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B129ED05210F146B008EC1B5 /* GradientView.swift */; };
 		B1D6903C210ED32500A1968D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D6903B210ED32500A1968D /* AppDelegate.swift */; };
-		B1D6903E210ED32500A1968D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D6903D210ED32500A1968D /* ViewController.swift */; };
 		B1D69041210ED32500A1968D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1D6903F210ED32500A1968D /* Main.storyboard */; };
 		B1D69043210ED32500A1968D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1D69042210ED32500A1968D /* Assets.xcassets */; };
 		B1D69046210ED32500A1968D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1D69044210ED32500A1968D /* LaunchScreen.storyboard */; };
+		B1D69054210ED3CA00A1968D /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D69053210ED3CA00A1968D /* MainVC.swift */; };
+		B1D69056210ED3EE00A1968D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D69055210ED3EE00A1968D /* Constants.swift */; };
+		B1D6905A210ED5BD00A1968D /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1D69059210ED5BD00A1968D /* SWRevealViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1643695E2662448C0DC7025D /* Pods_Meru_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Meru_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		259409912678EB5FE1CE616C /* Pods-Meru Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meru Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Meru Demo/Pods-Meru Demo.debug.xcconfig"; sourceTree = "<group>"; };
+		740D35F061A4E11645484C46 /* Pods-Meru Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meru Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Meru Demo/Pods-Meru Demo.release.xcconfig"; sourceTree = "<group>"; };
+		B11C1B7D210EDEB3000117AA /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
+		B129ED05210F146B008EC1B5 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		B1AD84E9210EDB46005E2A87 /* Meru Demo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Meru Demo-Bridging-Header.h"; sourceTree = "<group>"; };
 		B1D69038210ED32500A1968D /* Meru Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meru Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1D6903B210ED32500A1968D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B1D6903D210ED32500A1968D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B1D69040210ED32500A1968D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B1D69042210ED32500A1968D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B1D69045210ED32500A1968D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B1D69047210ED32500A1968D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1D69053210ED3CA00A1968D /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		B1D69055210ED3EE00A1968D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B1D69058210ED5BD00A1968D /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		B1D69059210ED5BD00A1968D /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +43,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DC6B59FBDAE6037AE9A3408 /* Pods_Meru_Demo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A2D4765446BA1FF23C5D47CD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				259409912678EB5FE1CE616C /* Pods-Meru Demo.debug.xcconfig */,
+				740D35F061A4E11645484C46 /* Pods-Meru Demo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B1D6902F210ED32500A1968D = {
 			isa = PBXGroup;
 			children = (
 				B1D6903A210ED32500A1968D /* Meru Demo */,
 				B1D69039210ED32500A1968D /* Products */,
+				A2D4765446BA1FF23C5D47CD /* Pods */,
+				E631E4ED75A6A8F4A9965190 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +80,92 @@
 		B1D6903A210ED32500A1968D /* Meru Demo */ = {
 			isa = PBXGroup;
 			children = (
+				B1D6905B210ED68500A1968D /* Utilities */,
+				B1D69051210ED35700A1968D /* Extensions */,
+				B1D69052210ED36600A1968D /* SupportingFiles */,
+				B1D69050210ED35000A1968D /* Services */,
+				B1D6904E210ED33A00A1968D /* Views */,
+				B1D6904F210ED34100A1968D /* Controllers */,
+				B1D6904D210ED33200A1968D /* Models */,
 				B1D6903B210ED32500A1968D /* AppDelegate.swift */,
-				B1D6903D210ED32500A1968D /* ViewController.swift */,
 				B1D6903F210ED32500A1968D /* Main.storyboard */,
 				B1D69042210ED32500A1968D /* Assets.xcassets */,
 				B1D69044210ED32500A1968D /* LaunchScreen.storyboard */,
 				B1D69047210ED32500A1968D /* Info.plist */,
+				B1AD84E9210EDB46005E2A87 /* Meru Demo-Bridging-Header.h */,
 			);
 			path = "Meru Demo";
+			sourceTree = "<group>";
+		};
+		B1D6904D210ED33200A1968D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B1D6904E210ED33A00A1968D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B129ED05210F146B008EC1B5 /* GradientView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B1D6904F210ED34100A1968D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B1D69053210ED3CA00A1968D /* MainVC.swift */,
+				B11C1B7D210EDEB3000117AA /* MenuVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B1D69050210ED35000A1968D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B1D69051210ED35700A1968D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B1D69052210ED36600A1968D /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				B1D69057210ED5BD00A1968D /* SWRevealViewController */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		B1D69057210ED5BD00A1968D /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B1D69058210ED5BD00A1968D /* SWRevealViewController.h */,
+				B1D69059210ED5BD00A1968D /* SWRevealViewController.m */,
+			);
+			path = SWRevealViewController;
+			sourceTree = "<group>";
+		};
+		B1D6905B210ED68500A1968D /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B1D69055210ED3EE00A1968D /* Constants.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		E631E4ED75A6A8F4A9965190 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1643695E2662448C0DC7025D /* Pods_Meru_Demo.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +175,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B1D6904A210ED32500A1968D /* Build configuration list for PBXNativeTarget "Meru Demo" */;
 			buildPhases = (
+				89BFA101E38DC9210F7AD256 /* [CP] Check Pods Manifest.lock */,
 				B1D69034210ED32500A1968D /* Sources */,
 				B1D69035210ED32500A1968D /* Frameworks */,
 				B1D69036210ED32500A1968D /* Resources */,
+				468639C91B78214CDD7C766A /* [CP] Embed Pods Frameworks */,
+				49884708B346742B730342CC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,13 +238,73 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		468639C91B78214CDD7C766A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Meru Demo/Pods-Meru Demo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		49884708B346742B730342CC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Meru Demo/Pods-Meru Demo-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Meru Demo/Pods-Meru Demo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		89BFA101E38DC9210F7AD256 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Meru Demo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B1D69034210ED32500A1968D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1D6903E210ED32500A1968D /* ViewController.swift in Sources */,
 				B1D6903C210ED32500A1968D /* AppDelegate.swift in Sources */,
+				B1D69054210ED3CA00A1968D /* MainVC.swift in Sources */,
+				B129ED06210F146B008EC1B5 /* GradientView.swift in Sources */,
+				B1D69056210ED3EE00A1968D /* Constants.swift in Sources */,
+				B1D6905A210ED5BD00A1968D /* SWRevealViewController.m in Sources */,
+				B11C1B7E210EDEB3000117AA /* MenuVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +383,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -265,6 +433,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -272,14 +441,19 @@
 		};
 		B1D6904B210ED32500A1968D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 259409912678EB5FE1CE616C /* Pods-Meru Demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E5M43CWNPK;
 				INFOPLIST_FILE = "Meru Demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vj.Meru-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Meru Demo/Meru Demo-Bridging-Header.h";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -287,14 +461,19 @@
 		};
 		B1D6904C210ED32500A1968D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 740D35F061A4E11645484C46 /* Pods-Meru Demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E5M43CWNPK;
 				INFOPLIST_FILE = "Meru Demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vj.Meru-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Meru Demo/Meru Demo-Bridging-Header.h";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
