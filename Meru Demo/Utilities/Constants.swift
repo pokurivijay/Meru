@@ -14,6 +14,13 @@ let GOOGL_MAPS_API = "AIzaSyDTe9vp67dEWLNKvS7cB3JlNe7TovkkEVs"
 // URL Constants
 let BASE_URL = ""
 
+
+//Message
+
+let NOTIFICATION_MESSAGE = ["No cabs nearby. We're still searching.",
+                                                "No Internet",
+                                                "No Internet",]
+
 // Segues
 
 // User Defaults
