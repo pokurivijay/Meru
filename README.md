@@ -8,11 +8,13 @@
 
 
 ## Screenshots
-<p>
-<img align="left" src="screenshots/1.png" alt="Meru Demo Screenshot 1" title="Launch Screen" width="250"/>
-<img align="left" src="screenshots/2.png" alt="Meru Demo Screenshot 2" title="Home Screen" width="250"/>
-<img align="left" src="screenshots/3.png" alt="Meru Demo Screenshot 3" title="Menu Screen" width="250"/>
-<p/>
+![Meru Demo Screenshot 1](screenshots/1.png "Launch Screen")
+
+![Meru Demo Screenshot 2](screenshots/2.png "Launch Screen")
+
+![Meru Demo Screenshot 3](screenshots/3.png "Launch Screen")
+
+
 
 ### All the imags and icons are copyrighted property by Meru Cabs.
 
