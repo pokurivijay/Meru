@@ -448,11 +448,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = E5M43CWNPK;
+				DEVELOPMENT_TEAM = S36HB6FKNT;
 				INFOPLIST_FILE = "Meru Demo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.vj.Meru-Demo";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pokurivijay.Meru;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Meru Demo/Meru Demo-Bridging-Header.h";
@@ -468,11 +468,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = E5M43CWNPK;
+				DEVELOPMENT_TEAM = S36HB6FKNT;
 				INFOPLIST_FILE = "Meru Demo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.vj.Meru-Demo";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pokurivijay.Meru;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Meru Demo/Meru Demo-Bridging-Header.h";
