@@ -10,7 +10,7 @@ import UIKit
 import GoogleMaps
 import GooglePlaces
 
-class MainVC: UIViewController, GMSMapViewDelegate {
+class MainVC: UIViewController {
     @IBOutlet weak var menuButton: UIButton!
     
     @IBOutlet weak var headerView: UIView!
@@ -25,6 +25,10 @@ class MainVC: UIViewController, GMSMapViewDelegate {
     @IBOutlet weak var signalIndicationView: UIView!
     @IBOutlet weak var isFavorite: UIButton!
     
+     let startingPointMarker = GMSMarker()
+    
+    private let locationManager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,11 +39,11 @@ class MainVC: UIViewController, GMSMapViewDelegate {
         mapView.camera = camera
         
         // Creates a marker in the center of the map.
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: 19.1196235, longitude: 72.8617509)
-        marker.title = "Sydney"
-        marker.snippet = "Australia"
-        marker.map = mapView
+       
+        startingPointMarker.position = CLLocationCoordinate2D(latitude: 19.1196235, longitude: 72.8617509)
+        startingPointMarker.title = "Sydney"
+        startingPointMarker.snippet = "Australia"
+        startingPointMarker.map = mapView
     
         menuButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
@@ -57,13 +61,7 @@ class MainVC: UIViewController, GMSMapViewDelegate {
         
     }
     
-    func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
-        print("Map will move")
-    }
-    
-    func mapView(_ mapView: GMSMapView, didDrag marker: GMSMarker) {
-        print("Diddrag marker")
-    }
+   
     
     
     @IBAction func currentLocationAction(_ sender: Any) {
@@ -75,5 +73,66 @@ class MainVC: UIViewController, GMSMapViewDelegate {
         
     }
     
+    
+    func animateHeaderFooter(){
+        
+        UIView.animate(withDuration: 50.0, animations: {
+            self.headerView.frame = CGRect(x: 0, y: -200, width: self.headerView.frame.size.width, height: self.headerView.frame.size.height)
+            self.footerView.frame = CGRect(x: 0, y: 1000, width: self.footerView.frame.size.width, height: self.footerView.frame.size.height)
+        })
+        
+    }
+    
 
+}
+
+extension MainVC: GMSMapViewDelegate{
+    
+    func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
+        print("Map will move")
+        animateHeaderFooter()
+    }
+    
+    //MARK - GMSMarker Dragging
+    func mapView(_ mapView: GMSMapView, didBeginDragging marker: GMSMarker) {
+        print("didBeginDragging")
+    }
+    
+    func mapView(_ mapView: GMSMapView, didDrag marker: GMSMarker) {
+        print("didDrag")
+    }
+    func mapView(_ mapView: GMSMapView, didEndDragging marker: GMSMarker) {
+        print("didEndDragging")
+    }
+    
+    
+    func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D){
+        startingPointMarker.position = coordinate
+    }
+    
+}
+
+
+// MARK: - CLLocationManagerDelegate
+extension MainVC: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        guard status == .authorizedWhenInUse else {
+            return
+        }
+        
+        locationManager.startUpdatingLocation()
+        mapView.isMyLocationEnabled = true
+        mapView.settings.myLocationButton = true
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.first else {
+            return
+        }
+        
+        mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
+        locationManager.stopUpdatingLocation()
+        //fetchNearbyPlaces(coordinate: location.coordinate)
+    }
 }

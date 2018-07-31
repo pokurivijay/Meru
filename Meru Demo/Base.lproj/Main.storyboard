@@ -1,24 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Avenir.ttc">
-            <string>Avenir-Book</string>
-            <string>Avenir-Medium</string>
-        </array>
-        <array key="AvenirNext.ttc">
-            <string>AvenirNext-DemiBold</string>
-            <string>AvenirNext-Medium</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Reveal View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -231,6 +221,46 @@
                                     <constraint firstItem="fg6-rL-2rk" firstAttribute="top" secondItem="Hyp-Mz-gLg" secondAttribute="bottom" id="lcM-Hb-QcX"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9dk-kO-2LG">
+                                <rect key="frame" x="143" y="165" width="34" height="70"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="locationpin_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Hr7-qk-99y">
+                                        <rect key="frame" x="0.0" y="0.0" width="34" height="70"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8v-e9-PRh">
+                                        <rect key="frame" x="6" y="3" width="20.5" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="M6h-Y3-qDq"/>
+                                            <constraint firstAttribute="height" constant="18" id="y65-Ld-guE"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="min" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcV-cg-bHB">
+                                        <rect key="frame" x="6" y="17" width="20.5" height="12"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="12" id="527-Ae-Jbz"/>
+                                            <constraint firstAttribute="width" constant="20" id="p83-Py-COO"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="9"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="fcV-cg-bHB" firstAttribute="top" secondItem="Y8v-e9-PRh" secondAttribute="bottom" constant="-4" id="0sa-SK-AxC"/>
+                                    <constraint firstAttribute="bottom" secondItem="Hr7-qk-99y" secondAttribute="bottom" id="CiV-kr-Lyf"/>
+                                    <constraint firstItem="Hr7-qk-99y" firstAttribute="top" secondItem="9dk-kO-2LG" secondAttribute="top" id="Vyd-8y-lXG"/>
+                                    <constraint firstItem="Y8v-e9-PRh" firstAttribute="top" secondItem="9dk-kO-2LG" secondAttribute="top" constant="3" id="Y9R-fq-YRg"/>
+                                    <constraint firstAttribute="width" constant="34" id="bbb-tS-Zhh"/>
+                                    <constraint firstAttribute="height" constant="70" id="e9A-ER-P6D"/>
+                                    <constraint firstItem="fcV-cg-bHB" firstAttribute="centerX" secondItem="9dk-kO-2LG" secondAttribute="centerX" id="qfO-QB-VDp"/>
+                                    <constraint firstAttribute="trailing" secondItem="Hr7-qk-99y" secondAttribute="trailing" id="szB-Tj-8DZ"/>
+                                    <constraint firstItem="Hr7-qk-99y" firstAttribute="leading" secondItem="9dk-kO-2LG" secondAttribute="leading" id="uSK-Nf-3m9"/>
+                                    <constraint firstItem="Y8v-e9-PRh" firstAttribute="centerX" secondItem="9dk-kO-2LG" secondAttribute="centerX" id="zo9-j9-sCj"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -243,7 +273,9 @@
                             <constraint firstItem="kW2-it-gQs" firstAttribute="top" secondItem="RXq-NA-0iP" secondAttribute="top" id="SYb-2k-Iyg"/>
                             <constraint firstItem="kW2-it-gQs" firstAttribute="leading" secondItem="RXq-NA-0iP" secondAttribute="leading" constant="8" id="Sa4-Mu-kNB"/>
                             <constraint firstItem="2Jl-pF-YFC" firstAttribute="top" secondItem="DF7-7N-npN" secondAttribute="top" id="YBb-k9-CY9"/>
+                            <constraint firstItem="9dk-kO-2LG" firstAttribute="centerY" secondItem="DF7-7N-npN" secondAttribute="centerY" constant="-40" id="d2i-aV-WaK"/>
                             <constraint firstAttribute="bottom" secondItem="2Jl-pF-YFC" secondAttribute="bottom" id="hvQ-Ro-pNT"/>
+                            <constraint firstItem="9dk-kO-2LG" firstAttribute="centerX" secondItem="DF7-7N-npN" secondAttribute="centerX" id="pNs-9B-5IR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RXq-NA-0iP"/>
                     </view>
@@ -261,7 +293,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h0P-Na-eIU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2194" y="-416"/>
+            <point key="canvasLocation" x="2193.75" y="-416.25"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="BqQ-Kf-REG">
@@ -370,6 +402,7 @@
         <image name="edit-pencil" width="100" height="100"/>
         <image name="heart-fill" width="100" height="100"/>
         <image name="intercity" width="121" height="75"/>
+        <image name="locationpin_icon" width="120" height="252"/>
         <image name="menu" width="104" height="104"/>
         <image name="packages" width="121" height="75"/>
         <image name="sedan_active" width="121" height="75"/>
