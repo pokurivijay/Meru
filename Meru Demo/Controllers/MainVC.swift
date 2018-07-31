@@ -17,7 +17,13 @@ class MainVC: UIViewController, GMSMapViewDelegate {
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var footerView: UIView!
     
+    @IBOutlet weak var bookLaterButton: UIButton!
+    @IBOutlet weak var bookNowButton: UIButton!
+
+    @IBOutlet weak var addressDisplayLabel: UILabel!
     
+    @IBOutlet weak var signalIndicationView: UIView!
+    @IBOutlet weak var isFavorite: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +47,15 @@ class MainVC: UIViewController, GMSMapViewDelegate {
         
     }
 
-    
+    override func viewWillAppear(_ animated: Bool) {
+        //UI setup
+        
+        bookLaterButton.backgroundColor = .clear
+        bookLaterButton.layer.cornerRadius = 2
+        bookLaterButton.layer.borderWidth = 1.5
+        bookLaterButton.layer.borderColor = UIColor.init(red: 0, green: 188/255, blue: 212/255, alpha: 1.0).cgColor
+        
+    }
     
     func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
         print("Map will move")
