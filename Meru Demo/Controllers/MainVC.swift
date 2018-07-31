@@ -51,7 +51,7 @@ class MainVC: UIViewController, GMSMapViewDelegate {
         //UI setup
         
         bookLaterButton.backgroundColor = .clear
-        bookLaterButton.layer.cornerRadius = 2
+        bookLaterButton.layer.cornerRadius = 1
         bookLaterButton.layer.borderWidth = 1.5
         bookLaterButton.layer.borderColor = UIColor.init(red: 0, green: 188/255, blue: 212/255, alpha: 1.0).cgColor
         
