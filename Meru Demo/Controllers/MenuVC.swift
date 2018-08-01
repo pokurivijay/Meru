@@ -13,7 +13,8 @@ class MenuVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,4 +33,32 @@ class MenuVC: UIViewController {
     }
     */
 
+}
+
+extension MenuVC: UITableViewDelegate{
+    
+    
+}
+
+extension MenuVC: UITableViewDataSource{
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return MENU.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cellReuseIdentifier = "Cell"
+        
+        let cell:UITableViewCell = (tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as UITableViewCell?)!
+        
+        cell.textLabel?.text = MENU[indexPath.row]
+        cell.imageView?.image =  UIImage.init(named: MENU_IMAGES[indexPath.row])
+
+        
+        return cell
+        
+    }
+    
+    
 }

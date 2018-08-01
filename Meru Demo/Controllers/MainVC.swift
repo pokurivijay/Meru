@@ -11,6 +11,7 @@ import GoogleMaps
 import GooglePlaces
 
 class MainVC: UIViewController {
+    
     @IBOutlet weak var menuButton: UIButton!
     
     @IBOutlet weak var headerView: UIView!
@@ -20,31 +21,32 @@ class MainVC: UIViewController {
     @IBOutlet weak var bookLaterButton: UIButton!
     @IBOutlet weak var bookNowButton: UIButton!
 
-    @IBOutlet weak var addressDisplayLabel: UILabel!
-    
     @IBOutlet weak var signalIndicationView: UIView!
+    @IBOutlet weak var addressDisplayLabel: UILabel!
     @IBOutlet weak var isFavorite: UIButton!
-    
-     let startingPointMarker = GMSMarker()
+    @IBOutlet private weak var mapCenterPinImage: UIImageView!
+    @IBOutlet weak var locateCurrentLocationButton: UIButton!
+
+    var isCameraStartMoving = false
     
     private let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Create a GMSCameraPosition that tells the map to display the
-        // coordinate -33.86,151.20 at zoom level 6.
-        let camera = GMSCameraPosition.camera(withLatitude: 19.1196235, longitude: 72.8617509, zoom: 15.0)
-//        mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-        mapView.camera = camera
         
-        // Creates a marker in the center of the map.
-       
-        startingPointMarker.position = CLLocationCoordinate2D(latitude: 19.1196235, longitude: 72.8617509)
-        startingPointMarker.title = "Sydney"
-        startingPointMarker.snippet = "Australia"
-        startingPointMarker.map = mapView
+        //Delegate's
+        mapView.delegate = self;
+        locationManager.delegate = self
+        
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        
+        //To make pointer center to the screen
+        mapView.padding = UIEdgeInsets(top: 0, left: 0,
+                                           bottom: 35, right: 0)
+        
     
+        //SWRevealController Methodes
         menuButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
@@ -52,63 +54,75 @@ class MainVC: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        //UI setup
         
-        bookLaterButton.backgroundColor = .clear
-        bookLaterButton.layer.cornerRadius = 1
-        bookLaterButton.layer.borderWidth = 1.5
-        bookLaterButton.layer.borderColor = UIColor.init(red: 0, green: 188/255, blue: 212/255, alpha: 1.0).cgColor
+        //UI setup
+        signalIndicationView.roundedView() //To make UIView Rounded -> UIButton extension
+        locateCurrentLocationButton.roundedView() //To make UIView Rounded -> UIButton extension
+        bookLaterButton.button(withBorder: 1, andRadious: 2) //To make UIButton with Rounded corners -> UIButton extension
+        bookNowButton.layer.cornerRadius = 2
         
     }
-    
-   
     
     
     @IBAction func currentLocationAction(_ sender: Any) {
         
-        print("currentLocationAction Pressed")
-        //Find Current location
-        //Place Camera/ pointer
+        //Find Current location - Completed
+        let target = locationManager.location?.coordinate
+        
+        //Place Camera/ pointer with animation - Completed
+        mapView.animate(to: GMSCameraPosition.camera(withTarget: target!, zoom: 15))
+
+        //without animation
+        //mapView.camera = GMSCameraPosition.camera(withTarget: target!, zoom: 15)
+        
+        
         //Calucate the distance/time and Display
+        //
         
     }
-    
-    
-    func animateHeaderFooter(){
-        
-        UIView.animate(withDuration: 50.0, animations: {
-            self.headerView.frame = CGRect(x: 0, y: -200, width: self.headerView.frame.size.width, height: self.headerView.frame.size.height)
-            self.footerView.frame = CGRect(x: 0, y: 1000, width: self.footerView.frame.size.width, height: self.footerView.frame.size.height)
-        })
-        
-    }
-    
 
 }
 
 extension MainVC: GMSMapViewDelegate{
     
     func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
-        print("Map will move")
-        animateHeaderFooter()
+        
+        //Camera position started changing.
+        isCameraStartMoving = true
+        
+        //Annimate Header & Footer Views
+        OperationQueue.main.addOperation {
+            UIView.animate(withDuration: 0.5) {
+                self.headerView.frame.origin.y -= 300
+                self.footerView.frame.origin.y += 300
+            }
+        }
+        
     }
     
-    //MARK - GMSMarker Dragging
-    func mapView(_ mapView: GMSMapView, didBeginDragging marker: GMSMarker) {
-        print("didBeginDragging")
+    func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
+        //Find Address by lat lang
+        //Display to Addresslabel
+        //print("Current Location: \(position.target.latitude) - \(position.target.latitude)")
     }
     
-    func mapView(_ mapView: GMSMapView, didDrag marker: GMSMarker) {
-        print("didDrag")
-    }
-    func mapView(_ mapView: GMSMapView, didEndDragging marker: GMSMarker) {
-        print("didEndDragging")
+    func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
+        print("Camera position Stoped Moving")
+        
+        //Annimate Header & Footer Views
+        if isCameraStartMoving {
+            UIView.animate(withDuration: 0.5) {
+                self.headerView.frame.origin.y += 300
+                self.footerView.frame.origin.y -= 300
+            }
+        }
+        
+        
     }
     
-    
-    func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D){
-        startingPointMarker.position = coordinate
-    }
+//    func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D){
+
+//    }
     
 }
 
@@ -123,7 +137,7 @@ extension MainVC: CLLocationManagerDelegate {
         
         locationManager.startUpdatingLocation()
         mapView.isMyLocationEnabled = true
-        mapView.settings.myLocationButton = true
+        //mapView.settings.myLocationButton = true
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -133,6 +147,7 @@ extension MainVC: CLLocationManagerDelegate {
         
         mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
         locationManager.stopUpdatingLocation()
-        //fetchNearbyPlaces(coordinate: location.coordinate)
+        
+        //Display addres line to user
     }
 }

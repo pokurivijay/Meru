@@ -14,6 +14,33 @@ let GOOGL_MAPS_API = "AIzaSyDTe9vp67dEWLNKvS7cB3JlNe7TovkkEVs"
 // URL Constants
 let BASE_URL = ""
 
+//Menu
+
+let MENU = ["My Bookings",
+            "Payments",
+            "Airport/Kerb Payments",
+            "Fares",
+            "Offers",
+            "Safety",
+            "FAQs",
+            "Feedback",
+            "Share App",
+            "About"]
+
+let MENU_IMAGES = ["edit-pencil",
+                   "edit-pencil",
+                   "edit-pencil",
+                   "edit-pencil",
+                   "edit-pencil",
+                   "edit-pencil",
+                   "edit-pencil",
+                   "edit-pencil",
+                   "edit-pencil",
+                   "edit-pencil"]
+
+//Meta Data
+
+let VERSION = "4.2.5"
 
 //Message
 
