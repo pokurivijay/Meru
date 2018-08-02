@@ -1,4 +1,8 @@
+PROJECT_NAME=Meru Demo
+WORKSPACE=$(PROJECT_NAME).xcworkspace
+SCHEME=$(PROJECT_NAME)
+
 language: objective-c
 osx_image: xcode9.4
 script:
-    - xcodebuild clean test -project "$app.xcworkspace" -scheme MyApp -destination "platform=iOS Simulator,name=iPhone 7,OS=10.3" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO -quiet
+    - xcodebuild clean test -project $(WORKSPACE) -scheme $(SCHEME) -destination "platform=iOS Simulator,name=iPhone 7,OS=10.3" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO -quiet
