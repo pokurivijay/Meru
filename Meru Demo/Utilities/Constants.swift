@@ -27,16 +27,16 @@ let MENU = ["My Bookings",
             "Share App",
             "About"]
 
-let MENU_IMAGES = ["edit-pencil",
-                   "edit-pencil",
-                   "edit-pencil",
-                   "edit-pencil",
-                   "edit-pencil",
-                   "edit-pencil",
-                   "edit-pencil",
-                   "edit-pencil",
-                   "edit-pencil",
-                   "edit-pencil"]
+let MENU_IMAGES = ["mybookings",
+                   "payments",
+                   "airport",
+                   "fares",
+                   "offers",
+                   "safety",
+                   "faq",
+                   "feedback",
+                   "shareApp",
+                   "about"]
 
 //Meta Data
 

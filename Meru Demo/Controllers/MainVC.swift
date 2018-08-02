@@ -88,15 +88,20 @@ extension MainVC: GMSMapViewDelegate{
     func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
         
         //Camera position started changing.
-        isCameraStartMoving = true
         
-        //Annimate Header & Footer Views
-        OperationQueue.main.addOperation {
-            UIView.animate(withDuration: 0.5) {
-                self.headerView.frame.origin.y -= 300
-                self.footerView.frame.origin.y += 300
+        
+        if gesture {
+            isCameraStartMoving = true
+            
+            //Annimate Header & Footer Views
+            OperationQueue.main.addOperation {
+                UIView.animate(withDuration: 0.5) {
+                    self.headerView.frame.origin.y -= 300
+                    self.footerView.frame.origin.y += 300
+                }
             }
         }
+        
         
     }
     
@@ -111,6 +116,9 @@ extension MainVC: GMSMapViewDelegate{
         
         //Annimate Header & Footer Views
         if isCameraStartMoving {
+            
+            isCameraStartMoving = false //Camera is ideal
+            
             UIView.animate(withDuration: 0.5) {
                 self.headerView.frame.origin.y += 300
                 self.footerView.frame.origin.y -= 300
@@ -118,6 +126,13 @@ extension MainVC: GMSMapViewDelegate{
         }
         
         
+    }
+    
+    func mapView(_ mapView: GMSMapView, markerInfoContents marker: GMSMarker) -> UIView? {
+        
+        print(marker)
+        
+        return UIView()
     }
     
 //    func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D){

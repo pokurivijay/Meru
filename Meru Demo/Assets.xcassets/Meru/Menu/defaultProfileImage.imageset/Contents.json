@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "city_taxi_active.png",
+      "filename" : "default_image.png",
       "scale" : "1x"
     },
     {

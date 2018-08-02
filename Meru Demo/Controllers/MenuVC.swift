@@ -10,11 +10,20 @@ import UIKit
 
 class MenuVC: UIViewController {
 
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var userMobileNumberLabel: UILabel!
+    @IBOutlet weak var userProfileImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //
+        userProfileImageView.roundedView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,12 +57,16 @@ extension MenuVC: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cellReuseIdentifier = "Cell"
+        let cellReuseIdentifier = "MenuTVCell"
         
-        let cell:UITableViewCell = (tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as UITableViewCell?)!
+        let cell:MenuTVCell = (tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! MenuTVCell?)!
         
-        cell.textLabel?.text = MENU[indexPath.row]
-        cell.imageView?.image =  UIImage.init(named: MENU_IMAGES[indexPath.row])
+        cell.menuTitleLabel?.text = MENU[indexPath.row]
+        cell.menuImageView?.image =  UIImage.init(named: MENU_IMAGES[indexPath.row])
+        
+        if (MENU.count == indexPath.row+1) {
+            cell.versionStackView.isHidden = false
+        }
 
         
         return cell
